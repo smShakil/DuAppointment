@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400'); /* font-family: 'Montserrat', sans-serif; */
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+.clr{
+  clear: both;
+}
+img{
+  image-rendering: -webkit-optimize-contrast;
+}
+ul{
+  list-style-type: none;
+}
+body{
+  background: #F5F5F5;
+}
+.tealColor{
+  background: #3cb3bb !important;
+  color: #fff !important;
+}
+
+
+/********************************
+        Login Page
+********************************/
+
+.loginFullPage{
+  width: 100%;
+  min-height: 100vh;
+  padding: 8vh 0 3vh;
+  background: linear-gradient(to top right, #2883d2, #3cb3bb);
+  background-image: url(../images/loginBg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.loginPanel{
+  width: 300px;
+  min-height: 310px;
+  margin: 0 auto 20px;
+  padding: 30px 20px;
+  background: url(../images/loginPanelLayer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+.loginLogo{
+  display: block;
+  margin: 0 auto 42px;
+  max-width: 150px;
+}
+.loginPanel .ui.form input,
+.loginPanel .ui.form input:focus{
+  border-radius: 20px;
+}
+.logingActionCon{
+  margin-top: 20px;
+}
+.logingActionCon .ui.button{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+.logingActionCon .ui.button:last-of-type{
+  margin-bottom: 0;
+}
+.logingActionCon .ui.divider,
+.forgotPassCon .ui.divider{
+  color: #fff;
+  font-weight: normal;
+}
+.forgotPassCon{
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+/********************************
+          Main Layout
+********************************/
+
+/*---------------------
+      Side Bar
+----------------------*/
+
+.sideBar{
+  height: 100vh;
+  position: fixed !important;
+  top: 0;
+  margin-left: 5px;
+  z-index: 999;
+  background: #3cb3bb;
+  background: -webkit-linear-gradient(65deg, #2883d2, #3cb3bb 62%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(65deg, #2883d2, #3cb3bb 62%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(65deg, #2883d2, #3cb3bb 62%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(65deg, #2883d2, #3cb3bb 62%); /* Standard syntax (must be last) */
+}
+.logoContainer{
+  height: 56px;
+  padding: 0 14px 14px;
+  margin: 0 -14px 0 -9px;
+  border-bottom: 1px solid #6dc6cc;
+}
+.logoContainer img{
+  max-height: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+}
+.navigation{
+  margin: 0 -14px 0 -5px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.navigation li a{
+  display: block;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 20px 14px 20px 20px;
+  position: relative;
+  cursor: pointer;
+}
+.navigation li a span{
+  margin-right: 15px;
+  font-size: 18px;
+}
+.navigation .dropdownIcon{
+  margin-right: 0;
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  font-size: 15px;
+  transition: all ease-out 0.5s;
+}
+.navigation > li:hover > a{
+  background: rgba(255,255,255,0.2);
+}
+.subNavigation{
+  display: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.subNavigation > li > a{
+  padding: 10px 0 10px 40px;
+}
+.subNavigation > li:hover > a{
+  background: rgba(0,0,0,0.1);
+}
+.subNavigation > li > a > i{
+  margin-right: 8px;
+}
+.activeMenu{
+  position: relative;
+}
+.activeMenu::before{
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  border-left: 3px solid rgba(255,255,255,0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.navigation > li.activeMenu > a{
+  background: rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2)
+}
+.navigation > li:first-of-type.activeMenu > a{
+  border-top: 0;
+}
+.activeMenu > .subNavigation{
+  display: block;
+}
+.activeMenu .subNavigation .activeSubMenu{
+  background: rgba(0,0,0,0.1);
+}
+.rotate180{
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  
+}
+
+/*---------------------
+      Top Bar
+----------------------*/
+
+.topBar{
+  position: fixed;
+  left: calc(18.75% - 9px);
+  width: calc(81.25% + 9px);
+  background: #fbfbfc;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0px 2px 5px #ddd;
+  z-index: 999;
+}
+.topBar .pageTitle{
+  font-family: 'Montserrat', sans-serif;
+  line-height: 70px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #757575;
+  margin-left: 28px;
+  text-transform: uppercase;
+  float: left;
+}
+.topBarMenu{
+  float: right;
+  margin-right: 50px;
+}
+.topBarMenu > li{
+  display: inline-block;
+  line-height: 70px;
+  margin-right: 25px;
+}
+.topBarMenu li:last-child{
+  margin-right: 0;
+}
+.topBarMenu .topBarIcon{
+  font-size: 20px;
+  color: #3cb3bb;
+  margin-right: 8px;
+}
+.topBarMenu .dropdownIcon{
+  font-size: 11px;
+}
+.menuItem{
+  display: table;
+}
+.menuItem > li{
+  display: table-cell;
+}
+.menuItem > li i{
+  vertical-align: -webkit-baseline-middle;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.menuItem > li p{
+  margin: 0 !important;
+}
+.menuItem > li span{
+  font-size: 12px;
+  color: #bdbdbd;
+}
+.topBarMenuLabel{
+  top: 0.6em !important;
+  left: 60% !important;
+  z-index: -1 !important;
+}
+
+
+/********************************
+        Home Page
+********************************/
+
+.mainBody{
+  margin-top: 70px;
+  padding: 14px 20px 0 6px;
+}
+.padding2x{
+  padding-top: 20px !important;
+}
+.summaryCard{
+  padding: 14px !important;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+.summaryCard p{
+  font-size: 50px;
+  color: #32acde;
+  line-height: 50px;
+  margin: 10px 0 5px;
+}
+#daterange{
+  margin-top: 10px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.scheduleSummary{
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.scheduleSummary:last-of-type{
+  border-bottom: 0;
+}
+.scheduleSummary > li{
+  display: table-cell;
+  padding: 10px;
+}
+.scheduleSummary .appointmentDate{
+  width: 10%;
+  text-align: center;
+}
+.appointmentDate p{
+  font-size: 30px;
+  font-weight: lighter;
+  margin: 0 !important;
+}
+.appointmentDate span{
+  color: #bdbdbd;
+  text-transform: uppercase;
+}
+.scheduleSummary .appointmentTime{
+  width: 20%;
+}
+.appointmentDetail{
+  width: 60%;
+}
+.appointmentDetail p{
+  font-size: 16px;
+  margin: 0 !important;
+}
+.appointmentDetail span{
+  color: #bdbdbd;
+  font-size: 12px;
+}
+.recentActivity{
+  max-height: 283px;
+  overflow-y: auto;
+}
+.recentActivity .menuItem{
+  border-bottom: 1px solid #ddd;
+  padding: 3px 0;
+}
+.recentActivity .menuItem:last-of-type{
+  border-bottom: 0;
+}
+
+
+
+/********************************
+        Appointment Page
+********************************/
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Default Syntax */
+}
+
+.appointmentContainer {
+  width: 100%;
+}
+.appointmentContainer .ui.form{
+  display: inline-block;
+}
+.appointmentContainer .inline.field{
+  display: inline-block;
+  margin-right: 10px;
+}
+.appointmentContainer h3{
+	margin-right: 20px;
+	display: inline-block;
+}
+.appClientInfo{
+  font-weight: bold;
+}
+.appClientInfo span{
+  font-weight: normal;
+}
+#ShowTime{
+  display: inline-block;
+  width: 200px;
+  height: 38px;
+  border: 1px solid rgba(75, 192, 192, 0.8);
+  border-radius: 2px;
+  padding: 7px 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.timeRowCon{
+  max-height: calc(100vh - 202px);
+  padding-right: 10px;
+  overflow: auto;
+}
+.timeSlider{
+  border: 1px solid rgba(75, 192, 192, 0.8);
+  border-collapse: collapse;
+  width: 100%;
+  cursor: pointer;
+  margin: 20px 0px;
+}
+.timeSlider tr td {
+  padding: 10px 0px;
+  position: relative;
+}
+.timeSlider tr td{
+  border-right: 1px solid rgba(75, 192, 192, 0.8);
+}
+
+.timeSlider tr td:first-child{
+  width: 10%;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.timeSlider tr td:hover{
+  background-color: rgba(75, 192, 192, 0.2);
+}
+.actionBtnCon{
+  padding: 14px 10px 0px 0px;
+  border-top: 1px solid #ddd;
+}
+
+
+
+/********************************
+        Customer Page
+********************************/
+
+.customer .ui.secondary.pointing.menu .active.item,
+.customer .ui.secondary.pointing.menu .active.item:hover{
+  border-color: rgba(75, 192, 192, 0.8);
+}
+.tableActionCon{
+  float: right;
+}
+.apptHistory .menuItem{
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+  width: 100%;
+}
+.apptHistory .menuItem li:first-child{
+  width: 7%;
+}
+.apptHistory .menuItem:last-of-type{
+  border-bottom: 0;
+}
+
+
+/********************************
+        News & Events
+********************************/
+
+
+
+
+
+
+
+/********************************
+        Responsive Codes
+********************************/
+
+@media only screen and (max-width: 767px){
+  .topBar{
+    width: 100%;
+    left: 0;
+  }
+  .mainBody{
+    padding: 14px 14px 0 14px;
+  }
+}
